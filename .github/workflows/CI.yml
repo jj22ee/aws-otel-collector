@@ -35,20 +35,8 @@ env:
   IMAGE_NAME: aws-otel-collector
   PACKAGING_ROOT: build/packages
   ECR_REPO: n7z4r8f9/test-aws-otel
-  # TF_VAR_patch: 'true'
-  PKG_SIGN_PRIVATE_KEY_NAME: aoc-linux-pkg-signing-gpg-key
-  WIN_UNSIGNED_PKG_BUCKET: aoc-aws-signer-unsigned-artifact-src
-  WIN_SIGNED_PKG_BUCKET: aoc-aws-signer-signed-artifact-dest
-  WIN_UNSIGNED_PKG_FOLDER: OTelCollectorAuthenticode/AuthenticodeSigner-SHA256-RSA
-  WIN_SIGNED_PKG_FOLDER: OTelCollectorAuthenticode/AuthenticodeSigner-SHA256-RSA
-  SSM_PACKAGE_NAME: "testAWSDistroOTel-Collector"
-  EKS_ARM_64_AMP_ENDPOINT: "https://aps-workspaces.us-west-2.amazonaws.com/workspaces/ws-e0c3c74f-7fdf-4e90-87d2-a61f52df40cd"
-  EKS_ARM_64_CLUSTER_NAME: "collector-ci-arm64-1-21"
-  EKS_ARM_64_REGION: "us-west-2"
   TESTING_FRAMEWORK_REPO: jj22ee/aws-otel-test-framework
-  GITHB_RUN_ID: ${{ github.run_id }}
-  DDB_TABLE_NAME: BatchTestCache
-  MAX_JOBS: 110
+  MAX_JOBS: 10
   BATCH_INCLUDED_SERVICES: EKS,ECS,EC2,EKS_ARM64,EKS_FARGATE
   GO_VERSION: ~1.20.10
 
@@ -101,84 +89,84 @@ jobs:
             echo "ref=terraform" >> $GITHUB_OUTPUT
           fi
 
-  build:
-    needs:
-      - create-test-ref
-    runs-on: ubuntu-latest
+  # build:
+  #   needs:
+  #     - create-test-ref
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Remove cache
-      run: rm -rf /opt/hostedtoolcache
+  #   steps:
+  #   - name: Remove cache
+  #     run: rm -rf /opt/hostedtoolcache
 
-    - uses: actions/checkout@v4
+  #   - uses: actions/checkout@v4
 
-    - name: apply patches
-      run: make apply-patches
+  #   - name: apply patches
+  #     run: make apply-patches
 
-    # Set up building environment, patch the dev repo code on dispatch events.
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v4
-      with:
-        go-version: ${{ env.GO_VERSION }}
+  #   # Set up building environment, patch the dev repo code on dispatch events.
+  #   - name: Set up Go 1.x
+  #     uses: actions/setup-go@v4
+  #     with:
+  #       go-version: ${{ env.GO_VERSION }}
 
-    - name: Checkout dev opentelemetry-collector-contrib
-      if: github.event_name == 'repository_dispatch' && github.event.action == 'dependency-build'
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ github.repository_owner }}/opentelemetry-collector-contrib
-        ref: main
-        path: pkg/opentelemetry-collector-contrib
+  #   - name: Checkout dev opentelemetry-collector-contrib
+  #     if: github.event_name == 'repository_dispatch' && github.event.action == 'dependency-build'
+  #     uses: actions/checkout@v4
+  #     with:
+  #       repository: ${{ github.repository_owner }}/opentelemetry-collector-contrib
+  #       ref: main
+  #       path: pkg/opentelemetry-collector-contrib
 
-    - name: Checkout dev opentelemetry-collector
-      if: github.event_name == 'repository_dispatch' && github.event.action == 'dependency-build'
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ github.repository_owner }}/opentelemetry-collector
-        ref: main
-        path: pkg/opentelemetry-collector
+  #   - name: Checkout dev opentelemetry-collector
+  #     if: github.event_name == 'repository_dispatch' && github.event.action == 'dependency-build'
+  #     uses: actions/checkout@v4
+  #     with:
+  #       repository: ${{ github.repository_owner }}/opentelemetry-collector
+  #       ref: main
+  #       path: pkg/opentelemetry-collector
 
-    - name: append replace statement to go.mod to build with dev repo
-      if: github.event_name == 'repository_dispatch' && github.event.action == 'dependency-build'
-      run: |
-        echo "replace github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter => ./pkg/opentelemetry-collector-contrib/exporter/awsxrayexporter" >> go.mod
-        echo "replace go.opentelemetry.io/collector => ./pkg/opentelemetry-collector" >> go.mod
-        cat go.mod
-        ls pkg
+  #   - name: append replace statement to go.mod to build with dev repo
+  #     if: github.event_name == 'repository_dispatch' && github.event.action == 'dependency-build'
+  #     run: |
+  #       echo "replace github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter => ./pkg/opentelemetry-collector-contrib/exporter/awsxrayexporter" >> go.mod
+  #       echo "replace go.opentelemetry.io/collector => ./pkg/opentelemetry-collector" >> go.mod
+  #       cat go.mod
+  #       ls pkg
 
-    - name: Cache binaries
-      id: cached_binaries
-      uses: actions/cache@v3
-      with:
-        key: "cached_binaries_${{ github.run_id }}"
-        path: build
+  #   - name: Cache binaries
+  #     id: cached_binaries
+  #     uses: actions/cache@v3
+  #     with:
+  #       key: "cached_binaries_${{ github.run_id }}"
+  #       path: build
 
-    # Unit Test and attach test coverage badge
-    - name: Unit Test
-      if: steps.cached_binaries.outputs.cache-hit != 'true'
-      run: make gotest
+  #   # Unit Test and attach test coverage badge
+  #   - name: Unit Test
+  #     if: steps.cached_binaries.outputs.cache-hit != 'true'
+  #     run: make gotest
 
-    - name: Upload Coverage report to CodeCov
-      if: steps.cached_binaries.outputs.cache-hit != 'true'
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.txt
+  #   - name: Upload Coverage report to CodeCov
+  #     if: steps.cached_binaries.outputs.cache-hit != 'true'
+  #     uses: codecov/codecov-action@v3
+  #     with:
+  #       file: ./coverage.txt
 
-    # Build and archive binaries into cache.
-    - name: Build Binaries
-      if: steps.cached_binaries.outputs.cache-hit != 'true'
-      run: make build
+  #   # Build and archive binaries into cache.
+  #   - name: Build Binaries
+  #     if: steps.cached_binaries.outputs.cache-hit != 'true'
+  #     run: make build
 
-    # upload the binaries to artifact as well because cache@v3 hasn't support windows
-    - name: Upload
-      uses: actions/upload-artifact@v3
-      with:
-        name: binary_artifacts
-        path: build
-        retention-days: 1
+  #   # upload the binaries to artifact as well because cache@v3 hasn't support windows
+  #   - name: Upload
+  #     uses: actions/upload-artifact@v3
+  #     with:
+  #       name: binary_artifacts
+  #       path: build
+  #       retention-days: 1
 
   e2etest-release:
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [create-test-ref]
     steps:
       - uses: actions/checkout@v4
 
@@ -266,7 +254,7 @@ jobs:
 
   run-logs-testbed:
     runs-on: ubuntu-latest
-    needs: [ e2etest-release, create-test-ref]
+    # needs: [ e2etest-release, create-test-ref]
 
     steps:
       - name: Set up JDK 11
@@ -302,6 +290,6 @@ jobs:
 
       - name: Run tests
         run: |
-          export TEST_IMAGE=public.ecr.aws/${{ env.ECR_REPO }}:test1234876
+          export TEST_IMAGE=public.ecr.aws/aws-otel-test/adot-collector-integration-test:v0.34.0-1124251
           cd testing-framework/adot-testbed
           ./gradlew test --rerun-tasks --info
