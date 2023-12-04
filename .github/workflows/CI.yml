@@ -20,10 +20,10 @@ on:
       - dev
       - test/*
     paths-ignore:
-      - '.github/**'
+      # - '.github/**'
       - '!.github/config/testcases.json'
-      - '!.github/workflows/CI.yml'
-      - '!.github/workflows/CI-Operator.yml'
+      # - '!.github/workflows/CI.yml'
+      # - '!.github/workflows/CI-Operator.yml'
       - '**.md'
       - 'tools/workflow/**'
 
