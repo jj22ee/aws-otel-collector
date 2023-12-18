@@ -290,6 +290,6 @@ jobs:
 
       - name: Run tests
         run: |
-          export TEST_IMAGE=public.ecr.aws/aws-otel-test/adot-collector-integration-test:v0.34.0-1124251
+          export TEST_IMAGE=public.ecr.aws/aws-otel-test/adot-collector-integration-test:v0.36.0-4cb5808a
           cd testing-framework/adot-testbed
           ./gradlew test --rerun-tasks --info
