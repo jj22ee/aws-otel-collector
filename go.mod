@@ -4,6 +4,18 @@ go 1.21.0
 
 toolchain go1.22.2
 
+replace (
+	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws => ../amazon-otel-contrib/override/aws
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter => ../amazon-otel-contrib/exporter/awscloudwatchlogsexporter
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter => ../amazon-otel-contrib/exporter/awsemfexporter
+
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter => ../amazon-otel-contrib/exporter/awsxrayexporter
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs => ../amazon-otel-contrib/internal/aws/cwlogs
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray => ../amazon-otel-contrib/internal/aws/xray
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray/telemetry => ../amazon-otel-contrib/internal/aws/xray/telemetry
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil => ../amazon-otel-contrib/internal/aws/awsutil
+)
+
 require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/s3provider v0.98.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter v0.98.0
@@ -115,6 +127,8 @@ require (
 	github.com/Showmax/go-fqdn v1.0.0 // indirect
 	github.com/alecthomas/participle/v2 v2.1.1 // indirect
 	github.com/alecthomas/units v0.0.0-20231202071711-9a357b53e9c9 // indirect
+	github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240419190856-2f880467f335 // indirect
+	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws v0.0.0-00010101000000-000000000000 // indirect
 	github.com/apache/thrift v0.20.0 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/aws/aws-sdk-go v1.51.17 // indirect
@@ -233,6 +247,7 @@ require (
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.4.4 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
+	github.com/jellydator/ttlcache/v3 v3.2.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jpillora/backoff v1.0.0 // indirect
@@ -391,6 +406,7 @@ require (
 	golang.org/x/mod v0.16.0 // indirect
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/oauth2 v0.18.0 // indirect
+	golang.org/x/sync v0.6.0 // indirect
 	golang.org/x/term v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.5.0 // indirect

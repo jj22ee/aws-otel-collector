@@ -138,6 +138,8 @@ github.com/alecthomas/units v0.0.0-20190717042225-c3de453c63f4/go.mod h1:ybxpYRF
 github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d/go.mod h1:rBZYJk541a8SKzHPHnH3zbiI+7dagKZ0cgpgrD7Fyho=
 github.com/alecthomas/units v0.0.0-20231202071711-9a357b53e9c9 h1:ez/4by2iGztzR4L0zgAOR8lTQK9VlyBVVd7G4omaOQs=
 github.com/alecthomas/units v0.0.0-20231202071711-9a357b53e9c9/go.mod h1:OMCwj8VM1Kc9e19TLln2VL61YJF0x1XFtfdL4JdbSyE=
+github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240419190856-2f880467f335 h1:bOalUnJMlfSQ/PWssUB0qbbeO/X0tosS/Y9K4wZzyL0=
+github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240419190856-2f880467f335/go.mod h1:5JOe6ISApVHBIsZuLb8ppaY06ujDcHCxYJE5wCymNoI=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/apache/thrift v0.20.0 h1:631+KvYbsBZxmuJjYwhezVsrfc/TbqtZV4QcxOX1fOI=
 github.com/apache/thrift v0.20.0/go.mod h1:hOk1BQqcp2OLzGsyVXdfMk7YFlMxK3aoEVhjD06QhB8=
@@ -609,6 +611,8 @@ github.com/jcmturner/gokrb5/v8 v8.4.4 h1:x1Sv4HaTpepFkXbt2IkL29DXRf8sOfZXo8eRKh6
 github.com/jcmturner/gokrb5/v8 v8.4.4/go.mod h1:1btQEpgT6k+unzCwX1KdWMEwPPkkgBtP+F6aCACiMrs=
 github.com/jcmturner/rpc/v2 v2.0.3 h1:7FXXj8Ti1IaVFpSAziCZWNzbNuZmnvw/i6CqLNdWfZY=
 github.com/jcmturner/rpc/v2 v2.0.3/go.mod h1:VUJYCIDm3PVOEHw8sgt091/20OJjskO/YJki3ELg/Hc=
+github.com/jellydator/ttlcache/v3 v3.2.0 h1:6lqVJ8X3ZaUwvzENqPAobDsXNExfUJd61u++uW8a3LE=
+github.com/jellydator/ttlcache/v3 v3.2.0/go.mod h1:hi7MGFdMAwZna5n2tuvh63DvFLzVKySzCVW6+0gA2n4=
 github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=
 github.com/jmespath/go-jmespath v0.4.0/go.mod h1:T8mJZnbsbmF+m6zOOFylbeCJqk5+pHWvzYPziyZiYoo=
 github.com/jmespath/go-jmespath/internal/testify v1.5.1 h1:shLQSRRSCCPj3f2gpwzGwWFoC7ycTf1rcQZHOlsJ6N8=
@@ -763,12 +767,6 @@ github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/s3pro
 github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/s3provider v0.98.0/go.mod h1:B9nDiPwMAO1k5pFErQhrylE3srkVzLxaTaXWR3Juiwc=
 github.com/open-telemetry/opentelemetry-collector-contrib/connector/datadogconnector v0.98.0 h1:AdTQTihowXT+BCtJKz6tYY6QaUf6yirSxIbftIC5Z74=
 github.com/open-telemetry/opentelemetry-collector-contrib/connector/datadogconnector v0.98.0/go.mod h1:FCuVdzwR+P15oG18/SjzqIUJGy97sXrXOjCiH6ZMvQs=
-github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter v0.98.0 h1:yNW1HxBL6LbJjhgnNK6RVl6L14O75XOSQ3UyPxmcMtE=
-github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter v0.98.0/go.mod h1:6TMsidQaQ/KEMC3LWWmiVNdNohDv57MTmdvN+0P1og0=
-github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter v0.98.0 h1:WlOCvQTSWObq6yL7/gsCDDbfZN5UUtelnp/bFHpfGU0=
-github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter v0.98.0/go.mod h1:JINul7uL/EQWAT0IHPXf7LQSQHVOjmfUaDB19rzlhAM=
-github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter v0.98.0 h1:WySeirGDSlAJtFX9fvbvFbWPKJHMje0zp2UQBnXZVvY=
-github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter v0.98.0/go.mod h1:Kn10O9ShLjHsRPmfMFvoxAUpD4ha0gIt9hA85JSnS5Y=
 github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter v0.98.0 h1:c4SyYvq2jk94j6SQBYconfrcfCRQVR1RVxnLO9b/ut8=
 github.com/open-telemetry/opentelemetry-collector-contrib/exporter/datadogexporter v0.98.0/go.mod h1:NOc8sJP2zWgG/ARCUX0rj62Tp9fjh7rBe3f7+S6wJKE=
 github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter v0.98.0 h1:eD48RXTOTI4mUqwmMbifd2xygNPFQk2+Q+h79tMKgRo=
@@ -809,8 +807,6 @@ github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil v
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil v0.98.0/go.mod h1:V235cPM6ngKN9qobDKrYLmWQrJ1WTDL8L0Rx7R/4xtc=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/containerinsight v0.98.0 h1:dFYXcpV9a+eOnrJHcRptwxfD6UNDSk3O+yTmQJM2tvA=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/containerinsight v0.98.0/go.mod h1:EW3A0XWGehjQfN6cw17uoDtYqd5SqsXDNfac9WAj8oU=
-github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs v0.98.0 h1:4DP7lHRWCpvPragqqfgaJVeZAkofyri+S6H7IRfRkls=
-github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs v0.98.0/go.mod h1:dkG+z2jMW6p8HgiZauQwJLgeTxQzwa/I1qoeSx0U3wI=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil v0.98.0 h1:4RD0elfzuoOxrBpekmg94JmIJjL8MZIayIUBLva+P44=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/ecsutil v0.98.0/go.mod h1:BnCYHF+EfdRTriFxwaaA9SuGV7Nri8WkZLXp+8keTg8=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/k8s v0.98.0 h1:EFOeCNi4Llbqg4BcnM/QHK44AAQGQJGJ7UT0sg0hQxI=
@@ -819,8 +815,6 @@ github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/metrics v
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/metrics v0.98.0/go.mod h1:dPJAgUxoGBqXFPsW0W6rxp43MQi+DZFnPBhYZpT2rIk=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/proxy v0.98.0 h1:JqBTRDU+LCKEekwgg2k3yLYnlfBqtEwkDO6V3w+ezNc=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/proxy v0.98.0/go.mod h1:8J5p03NsrMY8SIjF+8iaOj3NlYEH0gKcz/onmCnhckU=
-github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray v0.98.0 h1:uoXA78WpoXI1n+dexldxSFqe2VvLnz6TXNS77nCjQhQ=
-github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray v0.98.0/go.mod h1:/PGqMAGLWqyfqgaoXILd+shRDhmdraBsxw5zGeDjyjg=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/common v0.98.0 h1:rbfZJ4YA82WSC9HW2jgmY1UZEsOYte8VTjrBFU6dv5Y=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/common v0.98.0/go.mod h1:KOTp7iN8sWTmqk/SxbMqvM2KXUdgXRWb6hI84E5arLY=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.98.0 h1:FaldDCQ6hpPAauYZ1kbNWkTFU2vRgL/nr5UY8d2jrT4=
