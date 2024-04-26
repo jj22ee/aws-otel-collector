@@ -25,8 +25,8 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
 
-	attr "github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/internal/attributes"
-	"github.com/aws/amazon-cloudwatch-agent/translator/util/eksdetector"
+	attr "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/attributes"
+	// "github.com/aws-observability/aws-otel-collector/translator/util/eksdetector"
 )
 
 const (
@@ -680,15 +680,15 @@ func (h *kubernetesHostedInAttributeResolver) Process(attributes, resourceAttrib
 		}
 	}
 
-	if isEks := eksdetector.IsEKS(); isEks.Value {
-		attributes.PutStr(attr.HostedInClusterNameEKS, h.clusterName)
-	} else {
-		attributes.PutStr(attr.HostedInClusterNameK8s, h.clusterName)
-	}
+	// if isEks := eksdetector.IsEKS(); isEks.Value {
+	// 	attributes.PutStr(attr.HostedInClusterNameEKS, h.clusterName)
+	// } else {
+	attributes.PutStr(attr.HostedInClusterNameK8s, h.clusterName)
+	// }
 
 	//The application log group in Container Insights is a fixed pattern:
 	// "/aws/containerinsights/{Cluster_Name}/application"
-	// See https://github.com/aws/amazon-cloudwatch-agent-operator/blob/fe144bb02d7b1930715aa3ea32e57a5ff13406aa/helm/templates/fluent-bit-configmap.yaml#L82
+	// See https://github.com/aws-observability/aws-otel-collector-operator/blob/fe144bb02d7b1930715aa3ea32e57a5ff13406aa/helm/templates/fluent-bit-configmap.yaml#L82
 	logGroupName := "/aws/containerinsights/" + h.clusterName + "/application"
 	resourceAttributes.PutStr(semconv.AttributeAWSLogGroupNames, logGroupName)
 

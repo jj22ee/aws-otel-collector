@@ -70,6 +70,8 @@ import (
 	"go.opentelemetry.io/collector/receiver"
 	"go.opentelemetry.io/collector/receiver/otlpreceiver"
 	"go.uber.org/multierr"
+
+	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals"
 )
 
 // Components register OTel components for ADOT-collector distribution
@@ -127,6 +129,7 @@ func Components() (otelcol.Factories, error) {
 		batchprocessor.NewFactory(),
 		memorylimiterprocessor.NewFactory(),
 		k8sattributesprocessor.NewFactory(),
+		awsappsignals.NewFactory(),
 	}
 	processors, err := processor.MakeFactoryMap(processorList...)
 

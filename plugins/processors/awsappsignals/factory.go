@@ -12,25 +12,27 @@ import (
 	"go.opentelemetry.io/collector/processor"
 	"go.opentelemetry.io/collector/processor/processorhelper"
 
-	appsignalsconfig "github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/config"
+	appsignalsconfig "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/config"
+	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/metadata"
 )
 
-const (
-	// The value of "type" key in configuration.
-	typeStr = "awsapplicationsignals"
-	// The stability level of the processor.
-	stability = component.StabilityLevelBeta
-)
+// const (
+// 	// The value of "type" key in configuration.
+// 	typeStr = "awsapplicationsignals"
+// 	Type    = component.MustNewType("awsapplicationsignals")
+// 	// The stability level of the processor.
+// 	stability = component.StabilityLevelBeta
+// )
 
 var consumerCapabilities = consumer.Capabilities{MutatesData: true}
 
 // NewFactory returns a new factory for the aws attributes processor.
 func NewFactory() processor.Factory {
 	return processor.NewFactory(
-		typeStr,
+		metadata.Type,
 		createDefaultConfig,
-		processor.WithTraces(createTracesProcessor, stability),
-		processor.WithMetrics(createMetricsProcessor, stability),
+		processor.WithTraces(createTracesProcessor, metadata.TracesStability),
+		processor.WithMetrics(createMetricsProcessor, metadata.MetricsStability),
 	)
 }
 
