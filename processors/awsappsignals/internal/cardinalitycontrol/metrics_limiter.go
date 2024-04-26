@@ -14,8 +14,8 @@ import (
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
 
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/common"
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/config"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/common"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/config"
 )
 
 const (

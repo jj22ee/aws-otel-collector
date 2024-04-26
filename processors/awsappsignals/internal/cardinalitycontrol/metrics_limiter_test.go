@@ -16,8 +16,8 @@ import (
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
 
-	"github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/common"
-	awsappsignalsconfig "github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/config"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/common"
+	awsappsignalsconfig "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/config"
 )
 
 var emptyResourceAttributes = pcommon.NewMap()

@@ -71,7 +71,7 @@ import (
 	"go.opentelemetry.io/collector/receiver/otlpreceiver"
 	"go.uber.org/multierr"
 
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals"
 )
 
 // Components register OTel components for ADOT-collector distribution

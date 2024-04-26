@@ -6,7 +6,7 @@ package rules
 import (
 	"go.opentelemetry.io/collector/pdata/pcommon"
 
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/common"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/common"
 )
 
 type KeepActions struct {

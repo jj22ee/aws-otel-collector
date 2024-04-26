@@ -12,8 +12,8 @@ import (
 	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/confmap/confmaptest"
 
-	"github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/config"
-	"github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/rules"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/config"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/rules"
 )
 
 var expectedRules = []rules.Rule{
@@ -78,7 +78,7 @@ func TestLoadEKSConfig(t *testing.T) {
 		errorMessage string
 	}{
 		{
-			id: component.NewIDWithName("awsapplicationsignals", ""),
+			id: component.NewIDWithName(component.MustNewType("awsapplicationsignals"), ""),
 			expected: &config.Config{
 				Resolvers: []config.Resolver{config.NewEKSResolver("test")},
 				Rules:     expectedRules,
@@ -119,7 +119,7 @@ func TestLoadGenericConfig(t *testing.T) {
 		errorMessage string
 	}{
 		{
-			id: component.NewIDWithName("awsapplicationsignals", ""),
+			id: component.NewIDWithName(component.MustNewType("awsapplicationsignals"), ""),
 			expected: &config.Config{
 				Resolvers: []config.Resolver{config.NewGenericResolver("")},
 				Rules:     expectedRules,

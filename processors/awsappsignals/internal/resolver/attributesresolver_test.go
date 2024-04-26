@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/mock"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 
-	attr "github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/internal/attributes"
+	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
 )
 
 type MockSubResolver struct {

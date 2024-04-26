@@ -11,7 +11,7 @@ import (
 	conventions "go.opentelemetry.io/collector/semconv/v1.18.0"
 	"go.uber.org/zap"
 
-	attr "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/attributes"
+	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
 )
 
 type attributesNormalizer struct {

@@ -14,11 +14,11 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	appsignalsconfig "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/config"
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/cardinalitycontrol"
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/normalizer"
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/resolver"
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/rules"
+	appsignalsconfig "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/config"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/cardinalitycontrol"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/normalizer"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/resolver"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/rules"
 )
 
 const (

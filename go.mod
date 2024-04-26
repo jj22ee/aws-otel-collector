@@ -2,15 +2,10 @@ module github.com/aws-observability/aws-otel-collector
 
 go 1.22.2
 
-// Telegraf uses the older v1.8.2: https://github.com/influxdata/telegraf/blob/0e1b637414bdc7b438a8e77d859f787525b3782d/go.mod#L146
-// But we want a later version, so do a replace
-// v0.42.0 looks lower, but Prometheus messed up their library naming convention, it actually matches 2.42.0 prometheus version
-// replace github.com/prometheus/prometheus v1.8.2-0.20210430082741-2a4b8e12bbf23 => github.com/prometheus/prometheus v0.42.0
-
 replace (
 	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws => ../amazon-otel-contrib/override/aws
 
-	github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals => ./plugins/processors/awsappsignals
+	github.com/aws-observability/aws-otel-collector/processors/awsappsignals => ./processors/awsappsignals
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter => ../amazon-otel-contrib/exporter/awscloudwatchlogsexporter
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter => ../amazon-otel-contrib/exporter/awsemfexporter
 
@@ -22,7 +17,7 @@ replace (
 )
 
 require (
-	github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals v0.0.0
+	github.com/aws-observability/aws-otel-collector/processors/awsappsignals v0.0.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/s3provider v0.98.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter v0.98.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter v0.98.0

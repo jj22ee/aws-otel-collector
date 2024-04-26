@@ -18,7 +18,7 @@ ALL_SRC := $(shell find . -name '*.go' \
 							-type f | sort)
 
 # ALL_MODULES includes ./* dirs (excludes . dir)
-ALL_MODULES := $(shell find . -type f -name "go.mod" -exec dirname {} \; | sort | egrep  '^./' )
+ALL_MODULES := $(shell find . -type f -name "go.mod" -not -path './processors/*' -not -path './testbed/*' -exec dirname {} \; | sort | egrep  '^./' )
 
 ALL_SHELL_SCRIPTS := $(shell find . -type f -name "*.sh" -not -path './vendor/*' )
 SHELLCHECK_OPTS := "-e SC1071"
@@ -77,7 +77,7 @@ dependabot-generate: install-dbotconf
 	@$(DBOTCONF) generate > $(DEPENDABOT_CONFIG); 
 
 .PHONY: build
-build: install-tools
+build: install-tools golint
 	GOOS=darwin GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o ./build/darwin/amd64/aoc ./cmd/awscollector
 	GOOS=linux GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o ./build/linux/amd64/aoc ./cmd/awscollector
 	GOOS=linux GOARCH=arm64 $(GOBUILD) $(LDFLAGS) -o ./build/linux/arm64/aoc ./cmd/awscollector
@@ -89,15 +89,15 @@ build: install-tools
 
 
 .PHONY: amd64-build
-amd64-build: install-tools
+amd64-build: install-tools golint
 	GOOS=linux GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o ./build/linux/amd64/aoc ./cmd/awscollector
 
 .PHONY: arm64-build
-arm64-build: install-tools
+arm64-build: install-tools golint
 	GOOS=linux GOARCH=arm64 $(GOBUILD) $(LDFLAGS) -o ./build/linux/arm64/aoc ./cmd/awscollector
 
 .PHONY: windows-build
-windows-build: install-tools
+windows-build: install-tools golint
 	GOOS=windows GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o ./build/windows/amd64/aoc ./cmd/awscollector
 
 # For building container image during development, no lint nor other platforms
@@ -126,7 +126,7 @@ docker-build: amd64-build amd64-build-healthcheck
 	docker buildx build --platform linux/amd64 --build-arg BUILDMODE=copy --load -t $(DOCKER_NAMESPACE)/$(COMPONENT):$(VERSION) -f ./cmd/$(COMPONENT)/Dockerfile .
 
 .PHONY: amd64-build-healthcheck
-amd64-build-healthcheck: install-tools
+amd64-build-healthcheck: install-tools golint
 	GOOS=linux GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o ./build/linux/amd64/healthcheck ./cmd/healthcheck
 
 .PHONY: docker-build-arm
@@ -134,11 +134,11 @@ docker-build-arm: arm64-build arm64-build-healthcheck
 	docker buildx build --platform linux/arm64 --build-arg BUILDMODE=copy --load -t $(DOCKER_NAMESPACE)/$(COMPONENT):$(VERSION) -f ./cmd/$(COMPONENT)/Dockerfile .
 
 .PHONY: arm64-build-healthcheck
-arm64-build-healthcheck: install-tools
+arm64-build-healthcheck: install-tools golint
 	GOOS=linux GOARCH=arm64 $(GOBUILD) $(LDFLAGS) -o ./build/linux/arm64/healthcheck ./cmd/healthcheck
 
 .PHONY: windows-build-healthcheck
-windows-build-healthcheck: install-tools
+windows-build-healthcheck: install-tools golint
 	GOOS=windows GOARCH=amd64 $(GOBUILD) $(LDFLAGS) -o ./build/windows/amd64/healthcheck ./cmd/healthcheck
 
 .PHONY: docker-push

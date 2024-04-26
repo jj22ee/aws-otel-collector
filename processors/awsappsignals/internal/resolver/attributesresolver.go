@@ -10,8 +10,8 @@ import (
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
 
-	appsignalsconfig "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/config"
-	attr "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/attributes"
+	appsignalsconfig "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/config"
+	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
 )
 
 const AttributePlatformGeneric = "Generic"

@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 
-	attr "github.com/aws/amazon-cloudwatch-agent/plugins/processors/awsappsignals/internal/attributes"
+	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
 )
 
 func TestEC2HostedInAttributeResolverWithNoConfiguredName_NoASG_NoEnv(t *testing.T) {

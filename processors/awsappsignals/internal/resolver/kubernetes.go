@@ -25,7 +25,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
 
-	attr "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/attributes"
+	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
 	// "github.com/aws-observability/aws-otel-collector/translator/util/eksdetector"
 )
 

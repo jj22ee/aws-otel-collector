@@ -8,7 +8,7 @@ import (
 
 	"go.opentelemetry.io/collector/pdata/pcommon"
 
-	attr "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/attributes"
+	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
 )
 
 const AttributePlatformEC2 = "EC2"

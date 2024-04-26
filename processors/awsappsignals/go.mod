@@ -1,4 +1,4 @@
-module github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals
+module github.com/aws-observability/aws-otel-collector/processors/awsappsignals
 
 go 1.22.2
 
@@ -7,7 +7,7 @@ go 1.22.2
 // v0.42.0 looks lower, but Prometheus messed up their library naming convention, it actually matches 2.42.0 prometheus version
 replace github.com/prometheus/prometheus v1.8.2-0.20210430082741-2a4b8e12bbf23 => github.com/prometheus/prometheus v0.42.0
 
-replace github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals => ./
+replace github.com/aws-observability/aws-otel-collector/processors/awsappsignals => ./
 
 require (
 	github.com/aws/amazon-cloudwatch-agent v1.300037.1

@@ -8,7 +8,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/rules"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/rules"
 )
 
 type Config struct {

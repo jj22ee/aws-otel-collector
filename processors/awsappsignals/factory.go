@@ -12,8 +12,8 @@ import (
 	"go.opentelemetry.io/collector/processor"
 	"go.opentelemetry.io/collector/processor/processorhelper"
 
-	appsignalsconfig "github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/config"
-	"github.com/aws-observability/aws-otel-collector/plugins/processors/awsappsignals/internal/metadata"
+	appsignalsconfig "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/config"
+	"github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/metadata"
 )
 
 // const (
