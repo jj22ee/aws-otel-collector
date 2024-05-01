@@ -681,9 +681,9 @@ func (h *kubernetesHostedInAttributeResolver) Process(attributes, resourceAttrib
 	}
 
 	// if isEks := eksdetector.IsEKS(); isEks.Value {
-	// 	attributes.PutStr(attr.HostedInClusterNameEKS, h.clusterName)
+	attributes.PutStr(attr.HostedInClusterNameEKS, h.clusterName)
 	// } else {
-	attributes.PutStr(attr.HostedInClusterNameK8s, h.clusterName)
+	// attributes.PutStr(attr.HostedInClusterNameK8s, h.clusterName)
 	// }
 
 	//The application log group in Container Insights is a fixed pattern:
