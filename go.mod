@@ -3,17 +3,17 @@ module github.com/aws-observability/aws-otel-collector
 go 1.22.2
 
 replace (
-	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws => ../amazon-otel-contrib/override/aws
+	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws => github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws v0.0.0-20240423200359-b7481e4de660
 
 	github.com/aws-observability/aws-otel-collector/processors/awsappsignals => ./processors/awsappsignals
-	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter => ../amazon-otel-contrib/exporter/awscloudwatchlogsexporter
-	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter => ../amazon-otel-contrib/exporter/awsemfexporter
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter => github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter v0.0.0-20240423200359-b7481e4de660
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter => github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsemfexporter v0.0.0-20240423200359-b7481e4de660
 
-	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter => ../amazon-otel-contrib/exporter/awsxrayexporter
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil => ../amazon-otel-contrib/internal/aws/awsutil
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs => ../amazon-otel-contrib/internal/aws/cwlogs
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray => ../amazon-otel-contrib/internal/aws/xray
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray/telemetry => ../amazon-otel-contrib/internal/aws/xray/telemetry
+	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsxrayexporter => github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsxrayexporter v0.0.0-20240423200359-b7481e4de660
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/awsutil v0.0.0-20240423200359-b7481e4de660
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/cwlogs v0.0.0-20240423200359-b7481e4de660
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/xray v0.0.0-20240423200359-b7481e4de660
+	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray/telemetry => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/xray/telemetry v0.0.0-20240423200359-b7481e4de660
 )
 
 require (
