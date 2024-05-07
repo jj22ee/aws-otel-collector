@@ -3,9 +3,9 @@ module github.com/aws-observability/aws-otel-collector
 go 1.22.2
 
 replace (
-	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws => github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws v0.0.0-20240423200359-b7481e4de660
-
 	github.com/aws-observability/aws-otel-collector/processors/awsappsignals => ./processors/awsappsignals
+	github.com/aws-observability/aws-otel-collector/translator/util/eksdetector => ./translator/util/eksdetector
+
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter => github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter v0.0.0-20240423200359-b7481e4de660
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awsemfexporter => github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsemfexporter v0.0.0-20240423200359-b7481e4de660
 
@@ -13,7 +13,6 @@ replace (
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/awsutil => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/awsutil v0.0.0-20240423200359-b7481e4de660
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/cwlogs => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/cwlogs v0.0.0-20240423200359-b7481e4de660
 	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/xray v0.0.0-20240423200359-b7481e4de660
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/aws/xray/telemetry => github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/xray/telemetry v0.0.0-20240423200359-b7481e4de660
 )
 
 require (
@@ -129,10 +128,11 @@ require (
 	github.com/Showmax/go-fqdn v1.0.0 // indirect
 	github.com/alecthomas/participle/v2 v2.1.1 // indirect
 	github.com/alecthomas/units v0.0.0-20231202071711-9a357b53e9c9 // indirect
-	github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240425182904-b80e1c4308a2 // indirect
-	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws v0.0.0-20240425182904-b80e1c4308a2 // indirect
+	github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240423200359-b7481e4de660 // indirect
+	github.com/amazon-contributing/opentelemetry-collector-contrib/override/aws v0.0.0-20240423200359-b7481e4de660 // indirect
 	github.com/apache/thrift v0.20.0 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
+	github.com/aws-observability/aws-otel-collector/translator/util/eksdetector v0.0.0 // indirect
 	github.com/aws/aws-sdk-go v1.51.17 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.26.1 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.6.2 // indirect
@@ -184,6 +184,7 @@ require (
 	github.com/envoyproxy/go-control-plane v0.12.0 // indirect
 	github.com/envoyproxy/protoc-gen-validate v1.0.4 // indirect
 	github.com/euank/go-kmsg-parser v2.0.0+incompatible // indirect
+	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
 	github.com/expr-lang/expr v1.16.3 // indirect
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -381,7 +382,7 @@ require (
 	go.opentelemetry.io/collector/consumer v0.98.0 // indirect
 	go.opentelemetry.io/collector/extension/auth v0.98.0 // indirect
 	go.opentelemetry.io/collector/pdata v1.6.0 // indirect
-	go.opentelemetry.io/collector/semconv v0.98.0 // indirect
+	go.opentelemetry.io/collector/semconv v0.100.0 // indirect
 	go.opentelemetry.io/collector/service v0.98.0 // indirect
 	go.opentelemetry.io/contrib/config v0.5.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.49.0 // indirect

@@ -144,8 +144,8 @@ github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsemfex
 github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsemfexporter v0.0.0-20240423200359-b7481e4de660/go.mod h1:shTWN1DIuzxMlxFAePpC5ssPno7InKYz67kS7p+zTTM=
 github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsxrayexporter v0.0.0-20240423200359-b7481e4de660 h1:4o4JUKYOoSMxd7gkvbPZFdC3Ms4HY648cgybRpj2dR4=
 github.com/amazon-contributing/opentelemetry-collector-contrib/exporter/awsxrayexporter v0.0.0-20240423200359-b7481e4de660/go.mod h1:o9NV6CjnL89FLwpxhDYD+/p+6hCh5vlxE6fZPFIuV8g=
-github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240425182904-b80e1c4308a2 h1:3KXR8raw5j577a9PJ37MZr2349eduNY6vTh9V2QddcA=
-github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240425182904-b80e1c4308a2/go.mod h1:5JOe6ISApVHBIsZuLb8ppaY06ujDcHCxYJE5wCymNoI=
+github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240423200359-b7481e4de660 h1:1ZI6JMh8FWl5oTpeFfsmSsqefuNEgCmgEHX1xxdbt5c=
+github.com/amazon-contributing/opentelemetry-collector-contrib/extension/awsmiddleware v0.0.0-20240423200359-b7481e4de660/go.mod h1:cDpFSR8i0bjVLkxLxOFABagktk5wd7LdMzU4xX7unPo=
 github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/awsutil v0.0.0-20240423200359-b7481e4de660 h1:V0JJ7y+3zkWwV4pCDJMlDiztN7cEfgb1AglmgmHCtJc=
 github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/awsutil v0.0.0-20240423200359-b7481e4de660/go.mod h1:V8pzzNan0O1W9o3rBWpSwn8YIUN9ZVCEctuzn55EWtw=
 github.com/amazon-contributing/opentelemetry-collector-contrib/internal/aws/cwlogs v0.0.0-20240423200359-b7481e4de660 h1:gSI66Sxt9Ys7M0GdI4GoWXYLmdwTx7wq18doSV/pC3I=
@@ -1241,8 +1241,8 @@ go.opentelemetry.io/collector/receiver v0.98.0 h1:qw6JYwm+sHcZvM1DByo3QlGe6yGHuw
 go.opentelemetry.io/collector/receiver v0.98.0/go.mod h1:AwIWn+KnquTR+kbhXQrMH+i2PvTCFldSIJznBWFYs0s=
 go.opentelemetry.io/collector/receiver/otlpreceiver v0.98.0 h1:j7lfLwc5o1dtXIPXU8LjmxadejmJVRHN57ZYGH33Wq4=
 go.opentelemetry.io/collector/receiver/otlpreceiver v0.98.0/go.mod h1:uWDBDxaWuzF1U5S2UIhstO0+Q8aUiwiUu8uO1IYN2XQ=
-go.opentelemetry.io/collector/semconv v0.98.0 h1:zO4L4TmlxXoYu8UgPeYElGY19BW7wPjM+quL5CzoOoY=
-go.opentelemetry.io/collector/semconv v0.98.0/go.mod h1:8ElcRZ8Cdw5JnvhTOQOdYizkJaQ10Z2fS+R6djOnj6A=
+go.opentelemetry.io/collector/semconv v0.100.0 h1:QArUvWcbmsMjM4PV0zngUHRizZeUXibsPBWjDuNJXAs=
+go.opentelemetry.io/collector/semconv v0.100.0/go.mod h1:8ElcRZ8Cdw5JnvhTOQOdYizkJaQ10Z2fS+R6djOnj6A=
 go.opentelemetry.io/collector/service v0.98.0 h1:lLJ7VXPXcV62fSISh4GuNd5ti6WvKje76NSgezc3ydo=
 go.opentelemetry.io/collector/service v0.98.0/go.mod h1:wB7ozvZTHtMefb5KTYy5nyrVYWpGk8teq8jWFs4blIU=
 go.opentelemetry.io/contrib/config v0.5.0 h1:7jLbj1losnHOq1rarCVMEDrmkHWixEIJ11pDtT4KrGM=

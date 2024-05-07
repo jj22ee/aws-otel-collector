@@ -9,7 +9,10 @@ replace github.com/prometheus/prometheus v1.8.2-0.20210430082741-2a4b8e12bbf23 =
 
 replace github.com/aws-observability/aws-otel-collector/processors/awsappsignals => ./
 
+replace github.com/aws-observability/aws-otel-collector/translator/util/eksdetector => ./../../translator/util/eksdetector
+
 require (
+	github.com/aws-observability/aws-otel-collector/translator/util/eksdetector v0.0.0
 	github.com/aws/amazon-cloudwatch-agent v1.300037.1
 	github.com/deckarep/golang-set/v2 v2.6.0
 	github.com/gobwas/glob v0.2.3
@@ -19,7 +22,7 @@ require (
 	go.opentelemetry.io/collector/consumer v0.98.0
 	go.opentelemetry.io/collector/pdata v1.6.0
 	go.opentelemetry.io/collector/processor v0.98.0
-	go.opentelemetry.io/collector/semconv v0.98.0
+	go.opentelemetry.io/collector/semconv v0.100.0
 	go.uber.org/zap v1.27.0
 	golang.org/x/text v0.14.0
 	k8s.io/api v0.30.0

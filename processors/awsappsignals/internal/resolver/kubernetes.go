@@ -26,7 +26,7 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 
 	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
-	// "github.com/aws-observability/aws-otel-collector/translator/util/eksdetector"
+	"github.com/aws-observability/aws-otel-collector/translator/util/eksdetector"
 )
 
 const (
@@ -680,11 +680,11 @@ func (h *kubernetesHostedInAttributeResolver) Process(attributes, resourceAttrib
 		}
 	}
 
-	// if isEks := eksdetector.IsEKS(); isEks.Value {
-	attributes.PutStr(attr.HostedInClusterNameEKS, h.clusterName)
-	// } else {
-	// attributes.PutStr(attr.HostedInClusterNameK8s, h.clusterName)
-	// }
+	if isEks := eksdetector.IsEKS(); isEks.Value {
+		attributes.PutStr(attr.HostedInClusterNameEKS, h.clusterName)
+	} else {
+		attributes.PutStr(attr.HostedInClusterNameK8s, h.clusterName)
+	}
 
 	//The application log group in Container Insights is a fixed pattern:
 	// "/aws/containerinsights/{Cluster_Name}/application"
