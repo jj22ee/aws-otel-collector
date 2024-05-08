@@ -13,7 +13,6 @@ replace github.com/aws-observability/aws-otel-collector/translator/util/eksdetec
 
 require (
 	github.com/aws-observability/aws-otel-collector/translator/util/eksdetector v0.0.0
-	github.com/aws/amazon-cloudwatch-agent v1.300037.1
 	github.com/deckarep/golang-set/v2 v2.6.0
 	github.com/gobwas/glob v0.2.3
 	github.com/stretchr/testify v1.9.0

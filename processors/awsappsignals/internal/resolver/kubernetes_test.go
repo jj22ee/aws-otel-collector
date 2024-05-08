@@ -19,7 +19,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	attr "github.com/aws-observability/aws-otel-collector/processors/awsappsignals/internal/attributes"
-	"github.com/aws/amazon-cloudwatch-agent/translator/util/eksdetector"
+	"github.com/aws-observability/aws-otel-collector/translator/util/eksdetector"
 )
 
 // MockDeleter deletes a key immediately, useful for testing.
